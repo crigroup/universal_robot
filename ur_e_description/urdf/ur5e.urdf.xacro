@@ -21,7 +21,8 @@
     wrist_1_lower_limit:=${-pi}    wrist_1_upper_limit:=${pi}
     wrist_2_lower_limit:=${-pi}    wrist_2_upper_limit:=${pi}
     wrist_3_lower_limit:=${-pi}    wrist_3_upper_limit:=${pi}
-    transmission_hw_interface:=hardware_interface/PositionJointInterface
+    transmission_hw_interface_1:=hardware_interface/PositionJointInterface
+    transmission_hw_interface_2:=hardware_interface/VelocityJointInterface
     safety_limits:=false safety_pos_margin:=0.15
     safety_k_position:=20
     kinematics_file">
@@ -342,7 +343,7 @@
       </collision>
     </link>
 
-    <xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />
+    <xacro:ur_arm_transmission prefix="${prefix}" hw_interface_1="${transmission_hw_interface_1}" hw_interface_2="${transmission_hw_interface_2}"/>
     <xacro:ur_arm_gazebo prefix="${prefix}" />
 
     <!-- ROS base_link to UR 'Base' Coordinates transform -->
